@@ -29,7 +29,7 @@ def webhook():
 
 
 def processRequest(req):
-    print ("started processing")
+    print ("started processing again")
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
     result = req.get("result")
