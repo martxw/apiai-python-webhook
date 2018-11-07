@@ -49,9 +49,7 @@ def processRequest(req):
 def makeWebhookResult(speech):
     print (speech)
     return {
-        "speech": speech,
-        "displayText": speech,
-        # "contextOut": [],
+        "fulfillmentText": speech,
         "source": "apiai-weather-webhook-sample"
     }
 
