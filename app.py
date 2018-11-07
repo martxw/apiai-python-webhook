@@ -32,15 +32,15 @@ def webhook():
 
 def processRequest(req):
     print ("started processing again")
-    if req.get("result").get("action") != "yahooWeatherForecast":
+    if req.get("queryResult").get("action") != "yahooWeatherForecast":
         print ("Aint no action")
         return {}
-    print ("Getting result")
-    result = req.get("result")
+    print ("Getting queryResult")
+    result = req.get("queryResult")
     print ("Getting parameters")
     parameters = result.get("parameters")
-    print ("Getting city")
-    city = parameters.get("geo-city")
+    print ("Getting person_location")
+    city = parameters.get("person_location")
     print ("Making result")
     res = makeWebhookResult("What the hell do I care about " + city + ", huh?")
     print ("finished processing again")
