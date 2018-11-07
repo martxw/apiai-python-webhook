@@ -24,6 +24,8 @@ def webhook():
     res = json.dumps(res, indent=4)
     # print(res)
     r = make_response(res)
+    print("Response:")
+    print(json.dumps(r, indent=4))
     r.headers['Content-Type'] = 'application/json'
     return r
 
@@ -36,6 +38,7 @@ def processRequest(req):
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     res = makeWebhookResult("What the hell do I care about " + city + ", huh?")
+    print ("finished processing again")
     return res
 
 
